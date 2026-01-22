@@ -39,26 +39,7 @@ public class Main {
                 13
         ));
 
-        // 터미널 출력
-        Scanner sc = new Scanner(System.in);
-
-        //제목
-        System.out.println("[ 실시간 커머스 플랫폼 - 전자제품 ]");
-
-        // 상품 목록 출력(List > size 이용)
-        for (int i = 0; i < products.size(); i++){
-            Product a = products.get(i);
-            System.out.println(
-                    (i+1) + ". " + a.getName() + " | " + a.getPrice() + "원" + " | " +a.getDescription()
-            );
-        }
-
-        // 종료
-        System.out.println("0. 종료       | 프로그램 종료");
-        String exit = sc.nextLine();
-
-        if(exit.equals("0")){
-            System.out.println("커머스 플랫폼을 종료합니다.");
-        }
     }
 }
+
+int exit = Integer.parseInt(sc.nextLine());

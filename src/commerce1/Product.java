@@ -1,4 +1,4 @@
-package Commerce1;
+package commerce1;
 
 public class Product {
 

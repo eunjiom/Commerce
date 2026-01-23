@@ -24,15 +24,37 @@ public class CommerceSystem {
             for (int i = 0; i < categories.size(); i++) {
                 System.out.println((i + 1) + ". " + categories.get(i).getName());
             }
-
             // 종료
             System.out.println("0. 종료       | 프로그램 종료");
-            String exit = sc.nextLine();
 
-            if (exit.equals("0")) {
+            // 카테고리 숫자 입력받기
+            int categoryChoice = Integer.parseInt(sc.nextLine());
+
+            if (categoryChoice == 0) {
                 System.out.println("커머스 플랫폼을 종료합니다.");
+                break;
             }
+
+            // 선택한 카테고리
+            Category selecCategory = categories.get(categoryChoice - 1);
+
+            // 카테고리 내 제품 보여주기
+            List<Product> products = selecCategory.getProducts();
+            for (int i = 0; i < products.size(); i++) {
+                Product p = products.get(i);
+                System.out.println((i + 1) + ". " + p.getName() + " | " + p.getPrice() + "원" + " | " + p.getDescription());
+            }
+            System.out.println("0. 뒤로가기");
+
+            // 제품 숫자 입력받기
+            int productChoice = Integer.parseInt(sc.nextLine());
+
+            if (productChoice == 0) {
+                continue;
+            }
+
         }
 
     }
+
 }

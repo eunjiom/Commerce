@@ -53,6 +53,10 @@ public class CommerceSystem {
                 continue;
             }
 
+            Product selecProduct = products.get(productChoice -1);
+            System.out.println("선택한 상품: "+ selecProduct.getName()+" | "+selecProduct.getPrice()+"원"+" | "
+                    +selecProduct.getDescription()+" | "+selecProduct.getStock()+"개");
+
         }
 
     }
